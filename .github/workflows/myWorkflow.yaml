@@ -14,7 +14,7 @@ jobs:
   - name: checkout your source 
     uses: actions/checkout@v3
 
-  - name: Build Go binary
+  - name: Build Go binary 
     run: go build -o app
 
   - name: Build and deploy to Railway 
