@@ -1,0 +1,30 @@
+name: Railway Stack Workflow Deployment
+on:
+  push:
+    branches:
+      - 'release/v\d+\.\d+'
+
+
+jobs:
+ deploy_railway:
+  runs-on: ubuntu-latest
+
+  steps:
+
+  - name: checkout your source 
+    uses: actions/checkout@v3
+
+  - name: Build Go binary
+    run: go build -o app
+
+  - name: Build and deploy to Railway 
+    uses: bervProject/railway-deploy@main
+    env:
+      RAILWAY_TOKEN: ${{ secrets.TOKEN_RAILWAY_PROJECT }} 
+      INSTANCE_NAME: ${{ secrets.INSTANCE_VARIABLE }}
+    with:
+      service: "plucky-earthquake" 
+      
+    
+
+
