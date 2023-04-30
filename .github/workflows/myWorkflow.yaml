@@ -34,14 +34,40 @@ jobs:
     with:
       payload: |
         {
-          "text": "test",
+          "text": "",
           "blocks": [
             {
-              "type": "section",
+              "type": "header",
               "text": {
-                "type": "mrkdwn",
-                "text": "*Name:* XU CONG\n*Matriculation Number:* 123\n*Email:* 123@sg\n*Repository:* ${{ github.repository }}\n*Deployment URL:* ${{ vars.RAILWAY_APP_URL_VAR }}"
+                "type": "plain_text",
+                "text": "test header"
               }
+            },
+            {
+              "type": "section",
+              "fields": [
+                {
+                  "type": "mrkdwn",
+                  "text": "*Name:*test"
+                },
+                {
+                  "type": "mrkdwn",
+                  "text": "*Email:*\n<example.com|Fred Enriquez>"
+                }
+              ]
+            },
+            {
+              "type": "section",
+              "fields": [
+                {
+                  "type": "mrkdwn",
+                  "text": "*Matriculation:*test"
+                },
+                {
+                  "type": "mrkdwn",
+                  "text": "*Repository:*\n<example.com|Fred Enriquez>"
+                }
+              ]
             },
             {
               "type": "section",
