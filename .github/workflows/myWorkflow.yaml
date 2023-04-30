@@ -14,7 +14,7 @@ jobs:
   steps:
 
   - name: Print RAILWAY_APP_URL_VAR variable
-    run: echo $RAILWAY_APP_URL_VAR
+    run: echo ${{ vars.RAILWAY_APP_URL_VAR }}
 
   - name: checkout  
     uses: actions/checkout@v3
@@ -48,7 +48,7 @@ jobs:
               "type": "section",
               "text": {
                 "type": "mrkdwn",
-                "text": "${RAILWAY_APP_URL_VAR}"
+                "text": "${{ secrets.RAILWAY_APP_URL }}"
               },
               "accessory": {
                 "type": "button",
@@ -56,13 +56,13 @@ jobs:
                   "type": "plain_text",
                   "text": "Go"
                 },
-                "url": "${RAILWAY_APP_URL_VAR}"
+                "url": "${{ env.RAILWAY_APP_URL_VAR }}"
               }
             }
           ]
         }
     env:
-      SLACK_WEBHOOK_URL: "${SLACK_URL}"
+      SLACK_WEBHOOK_URL: "${}"
 
  
       
