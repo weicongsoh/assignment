@@ -36,7 +36,7 @@ jobs:
               "type": "section",
               "text": {
                 "type": "mrkdwn",
-                "text": "*Name:* XU CONG\n*Matriculation Number:* 123\n*Email:* 123@sg\n*Repository:* ${{ github.repository }}\n*Deployment URL:* ${{ secrets.RAILWAY_APP_URL }}"
+                "text": "*Name:* ${{ secrets.INSTANCE_VARIABLE }}\n*Matriculation Number:* 123\n*Email:* 123@sg\n*Repository:* ${{ github.repository }}\n*Deployment URL:* ${{ secrets.RAILWAY_APP_URL }}"
               }
             },
             {
@@ -55,14 +55,14 @@ jobs:
                     "type": "plain_text",
                     "text": "Go"
                   },
-                  "url": "${{ env.RAILWAY_APP_URL }}"
+                  "url": "${{ secrets.RAILWAY_APP_URL }}"
                 }
               ]
             }
           ]
         }
     env:
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_TEST_WEBHOOK_URL }}
 
  
       
