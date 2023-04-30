@@ -36,14 +36,14 @@ jobs:
               "type": "section",
               "text": {
                 "type": "mrkdwn",
-                "text": "*Name:* XU CONG\n*Matriculation Number:* 123\n*Email:* 123@sg\n*Repository:* ${{ github.repository }}\n*Deployment URL:* ${{ secrets.RAILWAY_APP_URL }}"
+                "text": "*Name:* XU CONG\n*Matriculation Number:* 123\n*Email:* 123@sg\n*Repository:* ${{ github.repository }}\n*Deployment URL:* ${{ env.RAILWAY_APP_URL_VAR }}"
               }
             },
             {
               "type": "section",
               "text": {
                 "type": "mrkdwn",
-                "text": "${{ secrets.RAILWAY_APP_URL }}"
+                "text": "${{ env.RAILWAY_APP_URL_VAR }}"
               },
               "accessory": {
                 "type": "button",
@@ -51,13 +51,13 @@ jobs:
                   "type": "plain_text",
                   "text": "Go"
                 },
-                "url": "${{ secrets.RAILWAY_APP_URL }}"
+                "url": "${{ env.RAILWAY_APP_URL_VAR }}"
               }
             }
           ]
         }
     env:
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_TEST_WEBHOOK_URL }}
+      SLACK_WEBHOOK_URL: ${{ env.SLACK_TEST_WEBHOOK_URL_VAR }}
 
  
       
