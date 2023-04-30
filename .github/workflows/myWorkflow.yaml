@@ -40,13 +40,6 @@ jobs:
               }
             },
             {
-              "type": "section",
-              "text": {
-                "type": "mrkdwn",
-                "text": "${{ secrets.RAILWAY_APP_URL }}"
-              }
-            },
-            {
               "type": "actions",
               "elements": [
                 {
