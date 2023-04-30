@@ -40,14 +40,14 @@ jobs:
               "type": "section",
               "text": {
                 "type": "mrkdwn",
-                "text": "*Name:* XU CONG\n*Matriculation Number:* 123\n*Email:* 123@sg\n*Repository:* ${{ github.repository }}\n*Deployment URL:* $RAILWAY_APP_URL_VAR"
+                "text": "*Name:* XU CONG\n*Matriculation Number:* 123\n*Email:* 123@sg\n*Repository:* ${{ github.repository }}\n*Deployment URL:* $RAILWAY_APP_URL"
               }
             },
             {
               "type": "section",
               "text": {
                 "type": "mrkdwn",
-                "text": "${{ env.RAILWAY_APP_URL_VAR }}"
+                "text": "$RAILWAY_APP_URL"
               },
               "accessory": {
                 "type": "button",
