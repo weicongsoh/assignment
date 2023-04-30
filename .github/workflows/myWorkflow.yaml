@@ -24,26 +24,47 @@ jobs:
       INSTANCE_NAME: ${{ secrets.INSTANCE_VARIABLE }}
     with:
       service: "plucky-earthquake" 
-    
-  - name: Notify Slack
-    uses: 8398a7/action-slack@v3
-    with:
-      custom_payload: |
-        {
-          "blocks": [
-            {
-              "type": "section",
-              "text": {
-                "type": "mrkdwn",
-                "text": "*Name:* XU CONG\n*Matriculation Number:* 123\n*Email:* 123@sg\n*Repository:* ${{ github.repository }}\n*Deployment URL:* ${{ secrets.RAILWAY_APP_URL }}"
-              }
-            }
-          ]
-        }
-    env:
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_TEST_WEBHOOK_URL }}
 
-  
+  - name: Send custom JSON data to Slack
+  id: slack
+  uses: slackapi/slack-github-action@v1.23.0
+  with:
+    payload: |
+      {
+        "blocks": [
+          {
+            "type": "section",
+            "text": {
+              "type": "mrkdwn",
+              "text": "*Name:* XU CONG\n*Matriculation Number:* 123\n*Email:* 123@sg\n*Repository:* ${{ github.repository }}\n*Deployment URL:* ${{ secrets.RAILWAY_APP_URL }}"
+            }
+          },
+          {
+            "type": "section",
+            "text": {
+              "type": "mrkdwn",
+              "text": "${{ secrets.RAILWAY_APP_URL }}"
+            }
+          },
+          {
+            "type": "actions",
+            "elements": [
+              {
+                "type": "button",
+                "text": {
+                  "type": "plain_text",
+                  "text": "Go"
+                },
+                "url": "${{ env.RAILWAY_APP_URL }}"
+              }
+            ]
+          }
+        ]
+      }
+  env:
+    SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+ 
       
     
 
