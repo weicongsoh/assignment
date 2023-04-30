@@ -60,7 +60,7 @@ jobs:
           ]
         }
     env:
-      SLACK_WEBHOOK_URL: "${{ vars.SLACK_TEST_WEBHOOK_URL_VAR }}"
+      SLACK_WEBHOOK_URL: "https://hooks.slack.com/services/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"
 
  
       
