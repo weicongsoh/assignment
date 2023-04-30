@@ -12,7 +12,7 @@ jobs:
   steps:
 
   - name: Print RAILWAY_APP_URL_VAR variable
-    run: echo ${{ vars.RAILWAY_APP_URL_VAR }}
+    run: echo ${{ vars.INSTANCE_VARIABLE_VAR }}
 
   - name: checkout  
     uses: actions/checkout@v3
@@ -60,8 +60,8 @@ jobs:
             }
           ]
         }
-    env:
-      SLACK_WEBHOOK_URL: "https://hooks.slack.com/services/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"
+    env: 
+      SLACK_WEBHOOK_URL: "${{ vars.SLACK_TEST_WEBHOOK_URL_VAR }}"
 
  
       
