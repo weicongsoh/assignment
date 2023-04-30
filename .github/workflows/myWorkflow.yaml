@@ -34,7 +34,7 @@ jobs:
     with:
       payload: |
         {
-          "text": "",
+          "text": "test",
           "blocks": [
             {
               "type": "header",
@@ -87,7 +87,7 @@ jobs:
           ]
         }
     env: 
-      SLACK_WEBHOOK_URL: "${{ vars.SLACK_TEST_WEBHOOK_URL_VAR }}"
+      SLACK_WEBHOOK_URL: "${{ secrets.SLACK_TEST_WEBHOOK_URL }}"
 
  
       
