@@ -49,11 +49,11 @@ jobs:
               "fields": [
                 {
                   "type": "mrkdwn",
-                  "text": "*Name:* test"
+                  "text": "*Name:* XU CONG"
                 },
                 {
                   "type": "mrkdwn",
-                  "text": "*Email:* test"
+                  "text": "*Email:* e1112906@u.nus.edu"
                 }
               ]
             },
@@ -62,7 +62,7 @@ jobs:
               "fields": [
                 {
                   "type": "mrkdwn",
-                  "text": "*Matriculation:* test"
+                  "text": "*Matriculation:* A0269523X"
                 },
                 {
                   "type": "mrkdwn",
