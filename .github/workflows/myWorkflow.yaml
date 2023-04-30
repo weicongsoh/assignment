@@ -6,7 +6,7 @@ on:
 
 
 jobs:
- deploy_railway_slack:
+ deploy_railway_slack_job_name:
   if: "!startsWith(github.event.head_commit.message, '#NORUN')"
   runs-on: ubuntu-latest
   
