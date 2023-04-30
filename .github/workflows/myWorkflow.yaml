@@ -8,9 +8,7 @@ on:
 jobs:
  deploy_railway_slack:
   runs-on: ubuntu-latest
-  env:
-      RAILWAY_APP_URL_VAR: ${{ secrets.RAILWAY_APP_URL }}
-      SLACK_URL: ${{ secrets.SLACK_TEST_WEBHOOK_URL }}
+  
   steps:
 
   - name: Print RAILWAY_APP_URL_VAR variable
@@ -41,14 +39,14 @@ jobs:
               "type": "section",
               "text": {
                 "type": "mrkdwn",
-                "text": "*Name:* XU CONG\n*Matriculation Number:* 123\n*Email:* 123@sg\n*Repository:* ${{ github.repository }}\n*Deployment URL:* ${RAILWAY_APP_URL_VAR}"
+                "text": "*Name:* XU CONG\n*Matriculation Number:* 123\n*Email:* 123@sg\n*Repository:* ${{ github.repository }}\n*Deployment URL:* ${{ vars.RAILWAY_APP_URL_VAR }}"
               }
             },
             {
               "type": "section",
               "text": {
                 "type": "mrkdwn",
-                "text": "${{ secrets.RAILWAY_APP_URL }}"
+                "text": "${{ vars.RAILWAY_APP_URL_VAR }}"
               },
               "accessory": {
                 "type": "button",
@@ -56,13 +54,13 @@ jobs:
                   "type": "plain_text",
                   "text": "Go"
                 },
-                "url": "${{ env.RAILWAY_APP_URL_VAR }}"
+                "url": "${{ vars.RAILWAY_APP_URL_VAR }}"
               }
             }
           ]
         }
     env:
-      SLACK_WEBHOOK_URL: "${}"
+      SLACK_WEBHOOK_URL: "${{ vars.SLACK_TEST_WEBHOOK_URL_VAR }}"
 
  
       
