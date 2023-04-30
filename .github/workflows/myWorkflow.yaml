@@ -40,7 +40,7 @@ jobs:
               "type": "section",
               "text": {
                 "type": "mrkdwn",
-                "text": "*Name:* ${{ vars.INSTANCE_VARIABLE_VAR }}\n*Matriculation Number:* 123\n*Email:* 123@sg\n*Repository:* ${{ github.repository }}\n*Deployment URL:* ${{ vars.RAILWAY_APP_URL_VAR }}"
+                "text": "*Name:* XU CONG\n*Matriculation Number:* 123\n*Email:* 123@sg\n*Repository:* ${{ github.repository }}\n*Deployment URL:* ${{ vars.RAILWAY_APP_URL_VAR }}"
               }
             },
             {
