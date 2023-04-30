@@ -40,17 +40,19 @@ jobs:
               }
             },
             {
-              "type": "actions",
-              "elements": [
-                {
-                  "type": "button",
-                  "text": {
-                    "type": "plain_text",
-                    "text": "Go"
-                  },
-                  "url": "${{ secrets.RAILWAY_APP_URL }}"
-                }
-              ]
+              "type": "section",
+              "text": {
+                "type": "mrkdwn",
+                "text": "${{ secrets.RAILWAY_APP_URL }}"
+              },
+              "accessory": {
+                "type": "button",
+                "text": {
+                  "type": "plain_text",
+                  "text": "Go"
+                },
+                "url": "${{ secrets.RAILWAY_APP_URL }}"
+              }
             }
           ]
         }
