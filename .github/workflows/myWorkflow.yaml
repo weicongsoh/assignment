@@ -8,11 +8,12 @@ on:
 jobs:
  deploy_railway_slack:
   runs-on: ubuntu-latest
-
+  env:
+      RAILWAY_APP_URL_VAR: ${{ secrets.RAILWAY_APP_URL }}
   steps:
 
   - name: Print RAILWAY_APP_URL_VAR variable
-    run: echo ${{ env.RAILWAY_APP_URL_VAR }}
+    run: echo $RAILWAY_APP_URL_VAR
 
   - name: checkout  
     uses: actions/checkout@v3
