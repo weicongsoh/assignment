@@ -40,7 +40,7 @@ jobs:
               "type": "header",
               "text": {
                 "type": "plain_text",
-                "text": "test header"
+                "text": "DipSA 56 CI/CD Submission"
               }
             },
             {
@@ -52,7 +52,7 @@ jobs:
                 },
                 {
                   "type": "mrkdwn",
-                  "text": "*Email:*\n<example.com|Fred Enriquez>"
+                  "text": "*Email:* test"
                 }
               ]
             },
@@ -65,7 +65,7 @@ jobs:
                 },
                 {
                   "type": "mrkdwn",
-                  "text": "*Repository:*\n<example.com|Fred Enriquez>"
+                  "text": "*Repository:* ${{ github.server_url }}/${{ github.repository }}"
                 }
               ]
             },
