@@ -12,7 +12,7 @@ jobs:
   steps:
 
   - name: Print RAILWAY_APP_URL_VAR variable
-    run: echo $RAILWAY_APP_URL_VAR
+    run: echo ${{ env.RAILWAY_APP_URL_VAR }}
 
   - name: checkout  
     uses: actions/checkout@v3
