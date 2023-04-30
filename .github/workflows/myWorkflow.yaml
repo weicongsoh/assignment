@@ -6,15 +6,15 @@ on:
 
 
 jobs:
- deploy_railway:
+ deploy_railway_slack:
   runs-on: ubuntu-latest
 
   steps:
 
-  - name: checkout your source 
+  - name: checkout  
     uses: actions/checkout@v3
 
-  - name: Build Go binary 
+  - name: Build Go 
     run: go build -o app
 
   - name: Build and deploy to Railway 
@@ -36,7 +36,7 @@ jobs:
               "type": "section",
               "text": {
                 "type": "mrkdwn",
-                "text": "*Name:* XU CONG\n*Matriculation Number:* 123\n*Email:* 123@sg\n*Repository:* ${{ github.repository }}\n*Deployment URL:* ${{ env.RAILWAY_APP_URL_VAR }}"
+                "text": "*Name:* XU CONG\n*Matriculation Number:* 123\n*Email:* 123@sg\n*Repository:* ${{ github.repository }}\n*Deployment URL:* $RAILWAY_APP_URL_VAR"
               }
             },
             {
