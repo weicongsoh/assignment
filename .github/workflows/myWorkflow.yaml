@@ -34,8 +34,8 @@ jobs:
     with:
       payload: |
         {
-          "channel": "test-submission",
-          "text": [
+          "text": "test",
+          "blocks": [
             {
               "type": "header",
               "text": {
