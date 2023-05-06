@@ -12,16 +12,14 @@ jobs:
   
   steps:
 
-  - name: Print INSTANCE_VARIABLE_VAR variable
-    run: echo ${{ vars.INSTANCE_VARIABLE_VAR }}
 
   - name: checkout  
     uses: actions/checkout@v3
 
-  - name: Build Go 
+  - name: Build Go app
     run: go build -o app
 
-  - name: Build and deploy to Railway 
+  - name: Deploy to Railway
     uses: bervProject/railway-deploy@main
     env:
       RAILWAY_TOKEN: ${{ secrets.TOKEN_RAILWAY_PROJECT }} 
