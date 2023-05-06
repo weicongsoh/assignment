@@ -13,7 +13,7 @@ jobs:
   steps:
 
 
-  - name: checkout  
+  - name: checkout_go  
     uses: actions/checkout@v3
 
   - name: Build Go app
