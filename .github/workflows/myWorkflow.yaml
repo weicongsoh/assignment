@@ -16,12 +16,6 @@ jobs:
   - name: Checkout_go  
     uses: actions/checkout@v3
 
-  - name: Build go app
-    run: go build -o app
-
-  - name: Install dependency
-    run: go get github.com/tools/godep
-
   - name: Deploy to Railway
     uses: bervProject/railway-deploy@main
     env:
