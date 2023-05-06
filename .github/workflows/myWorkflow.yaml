@@ -13,11 +13,14 @@ jobs:
   steps:
 
 
-  - name: checkout_go  
+  - name: Checkout_go  
     uses: actions/checkout@v3
 
-  - name: Build Go app
+  - name: Build go app
     run: go build -o app
+
+  - name: Install dependency
+    run: go get github.com/tools/godep
 
   - name: Deploy to Railway
     uses: bervProject/railway-deploy@main
@@ -26,7 +29,7 @@ jobs:
       INSTANCE_NAME: ${{ secrets.INSTANCE_VARIABLE }}
     with:
       service: "plucky-earthquake" 
-
+ 
   - name: Send custom JSON data to Slack
     id: slack
     uses: slackapi/slack-github-action@v1.23.0
